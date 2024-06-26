@@ -1,5 +1,9 @@
 Hotel::Hotel(){
 counter1=0, counter2=0;
+ for (int i = 0; i < 100; i++) {
+        customerName[i] = nullptr;
+        customerLastname[i] = nullptr;
+    }
 roomManagement();
 }
 
@@ -130,9 +134,12 @@ if(counter1==0&&counter2==0){
 else{
     cout<<"Room number, customer name and surname: \n";
     cout<<"=========================================\n";\
-    for(int i=1;i<20;i++){
+    for(int i=1;i<=20;i++){
+if (customerName[i] != nullptr && customerLastname[i] != nullptr){
 
-        cout<<i<<"\t\t"<<*customerName[i]<<"\t"<<*customerLastname[i];
+            cout<<i<<"\t\t"<<*customerName[i]<<"\t"<<*customerLastname[i]<<"\n";
+
+}
     }
 }
 }

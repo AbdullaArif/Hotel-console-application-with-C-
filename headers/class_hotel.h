@@ -1,6 +1,7 @@
 class Hotel{
 
-string* customerName[100],*customerLastname[100];
+string* customerName[100];
+string* customerLastname[100];
 int sum=0,counter1,counter2;
 
 
