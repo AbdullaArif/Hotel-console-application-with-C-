@@ -41,6 +41,7 @@ do{
 
 void Hotel::roomReservation(){
 int number;
+int mySum;
 int numberOfDays;
 int i=0,j=13;
 string name,lastName;
@@ -59,13 +60,14 @@ cin>>number;
                 cout<<"How long will you stay? ";
                 cin>>numberOfDays;
                 sum+=numberOfDays*500;
+                mySum=numberOfDays*500;
                 counter1++;
                 customerName[i]= new string;
                 *customerName[i]=name;
                  customerLastname[i]= new string;
                 *customerLastname[i]=lastName;
                 cout<<"Your single room reservation has been made successfully.\n";
-                cout<<"The amount you have to pay is: "<<sum<<" dollars for "<<numberOfDays<<" days.\n";
+                cout<<"The amount you have to pay is: "<<mySum<<" dollars for "<<numberOfDays<<" days.\n";
 
                 break;
             }
@@ -82,17 +84,18 @@ cin>>number;
                 cout<<"How long will you stay? ";
                 cin>>numberOfDays;
                 sum+=numberOfDays*1000;
+                mySum=numberOfDays*1000;
                 counter2++;
                 customerName[j]= new string;
                 *customerName[j]=name;
                  customerLastname[j]= new string;
                 *customerLastname[j]=lastName;
                 cout<<"Your double room reservation has been made successfully.\n";
+                cout<<"The amount you have to pay is: "<<mySum<<" dollars for "<<numberOfDays<<" days.\n";
                 break;
             }
 }
        if(i==20){cout<<"One and two person rooms are full"<<"\n";}
-
         break;
     default: cout<<"Wrong access!";
     }
@@ -116,13 +119,24 @@ else{
 }
 
 void Hotel::numberOfRooms(){
-
+cout<<"Number of occupied single rooms:"<<counter1<<"\n";
+cout<<"Number of double rooms used: "<<counter2<<"\n";
 }
 
 void Hotel::roomReport(){
+if(counter1==0&&counter2==0){
+    cout<<"All Rooms Empty\n";
+}
+else{
+    cout<<"Room number, customer name and surname: \n";
+    cout<<"=========================================\n";\
+    for(int i=1;i<20;i++){
 
+        cout<<i<<"\t\t"<<*customerName[i]<<"\t"<<*customerLastname[i];
+    }
+}
 }
 
 void Hotel::income(){
-
+cout<<"Total income: "<<sum<<"\n";
 }
