@@ -11,13 +11,13 @@ do{
 
     cout<<"\tWelcome to Arif Abdulla Hotel"<<"\n";
     cout<<"\t============================= "<<"\n";
-    cout<<"\t1) Rezervation "<<"\n";
+    cout<<"\t1) Room reservation "<<"\n";
     cout<<"\t---------------"<<"\n";
-    cout<<"\t2) Start Room  "<<"\n";
+    cout<<"\t2) To vacate a room  "<<"\n";
     cout<<"\t---------------"<<"\n";
-    cout<<"\t3) Full Rooms  "<<"\n";
+    cout<<"\t3) Number of occupied rooms  "<<"\n";
     cout<<"\t---------------"<<"\n";
-    cout<<"\t4) Room Raport "<<"\n";
+    cout<<"\t4) Room Report "<<"\n";
     cout<<"\t---------------"<<"\n";
     cout<<"\t5) Sum Income  "<<"\n";
     cout<<"\t---------------"<<"\n";
@@ -32,8 +32,8 @@ do{
      case 4: roomReport();break;
      case 5: income();break;
      case 6: exit(1);break;
-     delete customerLastname[];
-     delete customerName[];
+     delete[] customerLastname;
+     delete[] customerName;
      default:cout<<"Wrong choice! Please choose a number between 1 and 6"<<"\n";
    }
 }while(number!=6);
@@ -65,6 +65,8 @@ cin>>number;
                  customerLastname[i]= new string;
                 *customerLastname[i]=lastName;
                 cout<<"Your single room reservation has been made successfully.\n";
+                cout<<"The amount you have to pay is: "<<sum<<" dollars for "<<numberOfDays<<" days.\n";
+
                 break;
             }
 }
@@ -104,9 +106,13 @@ if(rooms[number]==fullRoom){
     rooms[number]=emptyRoom;
     delete customerName[number];
     delete customerLastname[number];
+    if(number>0&&number<=12) counter1--;
+else if(number>12&&number<=20)counter2--;
+cout<<"The room was evacuated successfully";
 }
-if(number>0&&number<=12) counter1--;
-if(number>12&&number<=20)counter2--;
+else{
+    cout<<"This room is already empty, please enter a different room\n";
+}
 }
 
 void Hotel::numberOfRooms(){
