@@ -7,7 +7,7 @@ int sum=0,counter1,counter2;
 enum status{
  emptyRoom,
  fullRoom
-}rooms[30];
+}rooms[20];
 
 public:
 

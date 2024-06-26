@@ -32,6 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="headers/class_hotel.h" />
+		<Unit filename="headers/class_hotel_methods.h" />
+		<Unit filename="headers/my_headers.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
